@@ -12,7 +12,7 @@ exports.postUsers = function(req, res) {
 	});
 };
 
-export.get Users = function(req, res) {
+exports.getUsers = function(req, res) {
 	User.find(function(err, users) {
 		if (err)
 			res.send(err);
