@@ -7,6 +7,11 @@ var Beer = require('./models/beer');
 mongoose.connect('mongodb://localhost:27017/beerlocker')
 
 var app = express();
+
+app.use(bodyParser.urlencolded({
+	extended: true
+}));
+
 var port = process.env.PORT || 3000;
 var router = express.Router();
 
