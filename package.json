@@ -6,6 +6,8 @@
     "body": "^4.5.0",
     "body-parser": "^1.10.2",
     "express": "^4.11.1",
-    "parser": "^0.1.4"
+    "parser": "^0.1.4",
+    "passport": "^0.2.1",
+    "passport-http": "^0.2.2"
   }
 }

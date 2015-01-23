@@ -19,3 +19,11 @@ exports.getUsers = function(req, res) {
 		res.json(users);
 	});
 };
+
+UserSchema.methods.verifyPassword = function(password, cb) {
+	bcrypt.compare(password, this.password, function(err, isMatch) {
+		cb(null, isMatch);
+	});
+};
+
+module.exports = mongoose.model('User', UserSchema);
