@@ -64,7 +64,7 @@ beerRoute.put(function(req, res) {
 });
 
 beerRoute.delete(function(req, res) {
-	Beer.findByIdAndRemove(req.params.beer_id, functino(err) {
+	Beer.findByIdAndRemove(req.params.beer_id, function(err) {
 		if (err)
 			res.send(err);
 		res.json({message: 'Beer removed from the locker!'});
