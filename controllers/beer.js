@@ -1,6 +1,6 @@
 var Beer = require('../models/beer');
 
-export.postBeers = function(req, res) {
+exports.postBeers = function(req, res) {
 	var beer = Beer();
 	beer.name = req.body.name;
 	beer.type = req.body.type;
@@ -12,3 +12,10 @@ export.postBeers = function(req, res) {
 	});
 };
 
+exports.getBeers = function(req, res) {
+	Beer.find(function(err, beers) {
+		if (err)
+			res.send(err);
+		res.json(beers);
+	});
+};
