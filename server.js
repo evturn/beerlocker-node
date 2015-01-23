@@ -19,6 +19,19 @@ router.get('/', function(req, res) {
 	res.json({message: 'Stop looking at me'});
 });
 
+var beersRoute = router.route('/beers');
+
+beersRoute.post(function(req, res) {
+	var beer = new Beer();
+	beer.name = req.body.name;
+	beer.type = req.body.quantity;
+	beer.save(function(err) {
+		if (err)
+			res.send(err);
+		res.json({message: 'Beer added to the locker!', data: beer});
+	});
+});
+
 app.use('/api', router);
 
 app.listen(port);
