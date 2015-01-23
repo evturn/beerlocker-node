@@ -8,7 +8,7 @@ mongoose.connect('mongodb://localhost:27017/beerlocker')
 
 var app = express();
 
-app.use(bodyParser.urlencolded({
+app.use(bodyParser.urlencoded({
 	extended: true
 }));
 
