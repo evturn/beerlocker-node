@@ -19,3 +19,11 @@ exports.getBeers = function(req, res) {
 		res.json(beers);
 	});
 };
+
+exports.getBeer = function(req, res) {
+	Beer.findById(req.params.beer_id, function(err, beer) {
+		if (err)
+			res.send(err);
+		res.json(beer);
+	});
+};
