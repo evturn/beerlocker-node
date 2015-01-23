@@ -2,7 +2,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var Beer = require('./models/beer');
+var beerController = require('./controllers/beer');
 
 mongoose.connect('mongodb://localhost:27017/beerlocker')
 
@@ -14,6 +14,13 @@ app.use(bodyParser.urlencoded({
 
 var port = process.env.PORT || 3000;
 var router = express.Router();
+
+router.route('/beers')
+	.post(beerController.postBeers)
+	.get(beerController.getBeers);
+
+
+
 
 router.get('/', function(req, res) {
 	res.json({message: 'Stop looking at me'});
