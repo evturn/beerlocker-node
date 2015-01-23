@@ -1,5 +1,9 @@
 
 var express = require('express');
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/beerlocker')
+
 var app = express();
 var port = process.env.PORT || 3000;
 var router = express.Router();
